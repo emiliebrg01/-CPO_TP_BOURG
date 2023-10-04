@@ -1,7 +1,7 @@
 /*
  * * Emilie Bourg
  * TDC
- *
+ * création jeu pour trouver un nombre 
  * 4 octobre 2023
  */
 package tp1_guessmynumber_bourg;
