@@ -22,8 +22,17 @@ public class TP2_Bieres_BOURG {
         BouteilleBiere unesecondBiere = new BouteilleBiere("Leffe", 6.6, "Abbaye de Leffe");
         unesecondBiere.lireEtiquette();
         
-        System.out.println(uneBiere.Décapsuler());
-        System.out.println(unesecondBiere.Décapsuler());
+        BouteilleBiere troisieme = new BouteilleBiere("Heineken", 5.0, "une brasserie");
+        BouteilleBiere la4 = new BouteilleBiere("panaché", 1.0 , "une autre brasserie");
+        
+        uneBiere.Décapsuler();
+        unesecondBiere.Décapsuler();
+        
+        System.out.println(uneBiere);
+        System.out.println(la4);
+        
+        
+        
     }
     
 }
