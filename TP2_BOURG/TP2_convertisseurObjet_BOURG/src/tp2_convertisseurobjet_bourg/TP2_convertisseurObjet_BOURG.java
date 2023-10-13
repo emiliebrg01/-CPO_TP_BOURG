@@ -20,7 +20,7 @@ public class TP2_convertisseurObjet_BOURG {
     public static void main(String[] args) {
         Scanner sc= new Scanner (System.in);
         double temp;
-        System.out.println("Entrer une température à convertir");
+        System.out.println("Entrez une température à convertir");
         temp = sc.nextDouble();
         
         int choix;
