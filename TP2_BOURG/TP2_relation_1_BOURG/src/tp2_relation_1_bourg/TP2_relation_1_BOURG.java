@@ -23,8 +23,26 @@ public class TP2_relation_1_BOURG {
         Personne bob = new Personne("Bobby", "Sixkiller"); 
         Personne reno = new Personne("Reno", "Raines"); 
         
-        System.out.println("liste des voitures disponibles "+ uneClio + "\n" 
+        System.out.println("liste des voitures disponibles \n"+ uneClio + "\n" 
                 + uneAutreClio + "\n" + une2008 + "\n" + uneMicra );
+        
+        bob.liste_voitures[0] = uneClio ;
+        bob.nbVoitures = 1 ; 
+        uneClio.Proprietaire = bob ;
+        bob.liste_voitures[1]= uneMicra;
+        bob.nbVoitures = 2;
+        uneMicra.Proprietaire = bob;
+        System.out.println("la premiere voiture de Bob est " + bob.liste_voitures[0]+" et sa seconde voiture est "+bob.liste_voitures[1]);
+        
+        //reno.liste_voitures[0] = uneAutreClio ;
+        //reno.nbVoitures = 1 ; 
+        //uneAutreClio.Proprietaire = reno ;
+        //reno.liste_voitures[1]= une2008;
+        //reno.nbVoitures = 2;
+        //une2008.Proprietaire = reno;
+        //System.out.println("la premiere voiture de Reno est " + reno.liste_voitures[0]+" et sa seconde voiture est "+reno.liste_voitures[1]);
+        System.out.println(bob.ajouter_voiture(uneClio));
+        System.out.println(reno.ajouter_voiture(uneAutreClio));
     }
     
 }
