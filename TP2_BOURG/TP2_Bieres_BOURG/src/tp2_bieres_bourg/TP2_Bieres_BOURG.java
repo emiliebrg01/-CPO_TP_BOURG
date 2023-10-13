@@ -1,7 +1,7 @@
 /*
  * Emilie Bourg
  * TDC
- * 
+ * Manipuler objet avec différentes bière 
  * 10 octobre 2023
  */
 package tp2_bieres_bourg;
