@@ -4,7 +4,8 @@
  * 18/10/2023
  * Sous class de arme, permet de donner plus de précision pour les épées
  */
-package tp3_heroic_fantasy_bourg;
+package Armes;
+
 
 /**
  *
