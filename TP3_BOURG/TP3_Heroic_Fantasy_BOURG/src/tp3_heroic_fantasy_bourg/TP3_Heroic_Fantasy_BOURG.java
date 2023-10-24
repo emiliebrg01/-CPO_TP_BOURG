@@ -46,16 +46,11 @@ public class TP3_Heroic_Fantasy_BOURG {
         listarm.add(duran);
         listarm.add(chene);
         listarm.add(charm);
-        
         System.out.println(listarm.toString());
-    }
         
-    public static void ajout (ArrayList<Arme> listarm, Arme nouvelle_arme){    
-    if (listarm.size()<4){
-        listarm.add(nouvelle_arme);
-    } else {
-        System.out.println("La liste est pleine, impossible de rajouter!");
+        conan.ajouter_arme(charm);
+        conan.ajouter_arme(duran);
+        
+        conan.port_arme(exca);
     }
-  }
-}
-    
+}    

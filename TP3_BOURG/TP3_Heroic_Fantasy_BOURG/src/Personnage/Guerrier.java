@@ -1,7 +1,7 @@
 /*
  * Emilie Bourg
  * TDC
- * 23/10/2023
+ * 24/10/2023
  * Sous class de personnage, permet de donner plus de précision pour les guerriers
  */
 package Personnage;
@@ -12,6 +12,7 @@ package Personnage;
  */
 public class Guerrier extends Personnage{
     boolean Acheval;
+    static int nb_guerrier=0;
 
     public boolean isAcheval() {
         return Acheval;
@@ -24,6 +25,10 @@ public class Guerrier extends Personnage{
     public Guerrier(String nom, int vie, boolean cheval) {
         super(nom, vie);
         Acheval=cheval;
+        nb_guerrier+=1;
     }
     
+    public void finalize() {
+        nb_guerrier-=1;
+    }
 }
