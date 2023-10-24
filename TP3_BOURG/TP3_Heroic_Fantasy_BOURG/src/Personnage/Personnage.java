@@ -8,21 +8,24 @@ package Personnage;
 
 import Armes.Arme;
 import java.util.ArrayList;
+import tp3_heroic_fantasy_bourg.etreVivant;
 
 /**
  *
  * @author Emilie
  */
-public abstract class Personnage {
+public abstract class Personnage implements etreVivant{
     String nom;
     int niveau_vie;
     Arme Arme_en_Main;
     ArrayList<Arme> inventaire;
     static int nb_perso=0;
     
+    
+    
     public Arme getArme_en_Main() {
         return Arme_en_Main;
-    }
+    }    
     
     public Personnage(String nom, int vie){
         this.nom=nom;
@@ -40,8 +43,19 @@ public abstract class Personnage {
         if (inventaire.size()<4){
         inventaire.add(arme_aj);
     } else {
-        System.out.println("La liste est pleine, impossible de rajouter!");
-    }
+        System.out.println("La liste est pleine, impossible de rajouter!");}}
+    
+    public void seFatiguer(){
+        niveau_vie-=10;}
+    
+    public boolean estVivant(){
+        if(niveau_vie>0){
+            return true;
+        } else {
+            return false;}}
+    
+    public void estAttaquéé(int points){
+        niveau_vie -= points;
     }
     
     public void port_arme (Arme arme_cherch){

@@ -6,6 +6,8 @@
  */
 package Personnage;
 
+import Armes.Arme;
+
 /**
  *
  * @author Emilie
