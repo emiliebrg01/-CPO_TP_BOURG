@@ -2,7 +2,8 @@
  * Emilie Bourg
  * 25/10/2023
  * TDC
- * 
+ * Class CelluleLumineuse représentant une cellule avec ses attributs et ses
+ * méthodes
  */
 package lightoff_.bourg._version_console;
 
