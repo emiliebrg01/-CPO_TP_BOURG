@@ -23,6 +23,9 @@ public class LightOff_Bourg_version_console {
         la2.activerCellule();
         
         System.out.println(la1+" "+la2+" "+la3);
-    }
+        GrilleDeCellules grille1 = new GrilleDeCellules (10, 10);
+        grille1.activerLigneDeCellules(5);
+        System.out.println(grille1);
     
+    }
 }
