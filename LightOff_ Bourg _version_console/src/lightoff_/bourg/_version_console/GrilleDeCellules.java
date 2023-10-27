@@ -7,6 +7,8 @@
  */
 package lightoff_.bourg._version_console;
 
+import java.util.Random;
+
 /**
  * Cette classe permet d'afficher une grille de cellules 
  * lumineuses d'un nombre de lignes et colonnes choisies
@@ -34,9 +36,66 @@ public class GrilleDeCellules {
         }
     }
 }
+    public void eteindreToutesLesCellules(){
+        for (int i = 0; i<nbLignes;i++){
+            for(int j = 0; j<nbColonnes;j++){
+                matriceCellules[i][j].eteindreCellule();
+            }       
+        }
+    }
+    public boolean cellulesToutesEteintes(){ 
+        boolean rep=true;
+        for (int i = 0; i<nbLignes;i++){
+            for(int j = 0; j<nbColonnes;j++){
+                if (matriceCellules[i][j].estEteint()==false){
+                    rep=false;
+                }
+            }
+        }
+        return rep;
+    }
+    
+        
     public void activerLigneDeCellules(int idLigne){
         for (int i=0;i<nbColonnes;i++){
             matriceCellules[idLigne-1][i].activerCellule();
+        }
+    }
+    public void activerColonneDeCellules(int idColonne){
+        for (int i=0; i<nbLignes; i++){
+            matriceCellules[i][idColonne-1].activerCellule();
+        }
+    }
+    public void activerDiagonaleDescendante(){
+        for (int i=0; i<nbLignes;i++){
+            matriceCellules[i][i].activerCellule();
+        }
+    }
+    public void activerDiagonaleMontante(){
+        for (int i=0;i<nbLignes;i++){
+            matriceCellules[i][nbLignes-1-i].activerCellule();
+        }
+    }
+    public void activerLigneColonneOuDiagonaleAleatoire(){
+        Random alea = new Random();
+        int unnombreligne=alea.nextInt(nbLignes)+1;
+        int unnombrecolo=alea.nextInt(nbColonnes)+1;
+        int choix = alea.nextInt(4);
+        if (choix==0){
+            activerLigneDeCellules(unnombreligne);
+        } else if(choix==1){
+            activerColonneDeCellules(unnombrecolo);
+        } else if(choix==2){
+            activerDiagonaleDescendante();
+        } else if (choix==3){
+            activerDiagonaleMontante();
+        }
+    }
+    public void melangerMatriceAleatoirement(int nbTours){
+        eteindreToutesLesCellules();
+        for (int i=0;i<nbTours;i++){
+            activerLigneColonneOuDiagonaleAleatoire();
+            
         }
     }
 

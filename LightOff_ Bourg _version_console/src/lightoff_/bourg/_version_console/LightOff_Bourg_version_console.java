@@ -16,16 +16,14 @@ public class LightOff_Bourg_version_console {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        CelluleLumineuse la1 = new CelluleLumineuse ();
-        CelluleLumineuse la2 = new CelluleLumineuse ();
-        CelluleLumineuse la3 = new CelluleLumineuse ();
-        
-        la2.activerCellule();
-        
-        System.out.println(la1+" "+la2+" "+la3);
         GrilleDeCellules grille1 = new GrilleDeCellules (10, 10);
-        grille1.activerLigneDeCellules(5);
+        /*grille1.activerLigneDeCellules(5);
+        grille1.activerColonneDeCellules(6);
+        grille1.activerDiagonaleDescendante();
+        grille1.activerDiagonaleMontante();*/
+        System.out.println(grille1.cellulesToutesEteintes());
+        grille1.melangerMatriceAleatoirement(2);
         System.out.println(grille1);
-    
+        System.out.println(grille1.cellulesToutesEteintes());
     }
 }
