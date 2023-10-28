@@ -13,6 +13,7 @@ package lightoff_.bourg._version_console;
 public class LightOff_Bourg_version_console {
 
     /**
+     * Lance la partie avec une grille de taille désirée
      * @param args the command line arguments
      */
     public static void main(String[] args) {
