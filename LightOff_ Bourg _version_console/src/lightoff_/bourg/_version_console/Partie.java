@@ -34,8 +34,8 @@ public class Partie {
        grille.melangerMatriceAleatoirement(5);
        while(grille.cellulesToutesEteintes()==true){
            grille.melangerMatriceAleatoirement(5);
-           System.out.println(grille);
        }
+       System.out.println(grille);
    }
    
     /**
@@ -65,16 +65,16 @@ public class Partie {
                + "\n<<d1>> pour la diagonale descendante"
                + "\n<<d2>> pour la diagonale montante");
        coup=sc.nextLine();
-       if (coup=="d1"){
+       if (coup.equals("d1")){
            grille.activerDiagonaleDescendante();
-       } else if (coup=="d2"){
+       } else if (coup.equals("d2")){
            grille.activerDiagonaleMontante();
-       } else if (coup=="l"){
+       } else if (coup.equals("l")){
            int ligne;
            System.out.println("Veuillez entrez le chiffre de la ligne choisie");
            ligne=sc.nextInt();
            grille.activerLigneDeCellules(ligne);
-       } else if (coup=="c"){
+       } else if (coup.equals("c")){
            int colonne;
            System.out.println("Veuillez entrez le chiffre de la colonne choisie");
            colonne=sc.nextInt();
