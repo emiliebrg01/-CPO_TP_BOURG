@@ -2,15 +2,14 @@
  * Emilie Bourg
  * 25/10/2023
  * TDC
- * Class GrillesDeCellules représentant une cellule avec ses attributs et ses
- * méthodes
+ * Class GrillesDeCellules représentant une grille de cellule avec ses 
+ * attributs et ses méthodes
  */
 package lightoff_.bourg._version_console;
-
 import java.util.Random;
 
 /**
- * Cette classe permet d'afficher une grille de cellules 
+ * Cette class permet d'afficher une grille de cellules 
  * lumineuses d'un nombre de lignes et colonnes choisies
  * @author Emilie
  */
@@ -36,6 +35,10 @@ public class GrilleDeCellules {
         }
     }
 }
+
+    /**
+     * Eteint toutes les cellules de la grille
+     */
     public void eteindreToutesLesCellules(){
         for (int i = 0; i<nbLignes;i++){
             for(int j = 0; j<nbColonnes;j++){
@@ -43,6 +46,11 @@ public class GrilleDeCellules {
             }       
         }
     }
+
+    /**
+     * Permet de vérifier si toutes les cellules sont éteintes
+     * @return true si elles sont toutes éteintes et false sinon
+     */
     public boolean cellulesToutesEteintes(){ 
         boolean rep=true;
         for (int i = 0; i<nbLignes;i++){
@@ -55,27 +63,52 @@ public class GrilleDeCellules {
         return rep;
     }
     
-        
+    /**
+     * Active toutes les cellules d'une ligne entrée en paramètre
+     * (change leur état)
+     * @param idLigne
+     */
     public void activerLigneDeCellules(int idLigne){
         for (int i=0;i<nbColonnes;i++){
             matriceCellules[idLigne-1][i].activerCellule();
         }
     }
+    
+    /**
+     * Active toutes les cellules d'une colonne entrée en paramètre
+     * (change leur état)
+     * @param idColonne
+     */
     public void activerColonneDeCellules(int idColonne){
         for (int i=0; i<nbLignes; i++){
             matriceCellules[i][idColonne-1].activerCellule();
         }
     }
+    
+    /**
+     * Active toutes les cellules de la diagonale descendante
+     * (change leur état)
+     */
     public void activerDiagonaleDescendante(){
         for (int i=0; i<nbLignes;i++){
             matriceCellules[i][i].activerCellule();
         }
     }
+    
+    /**
+     * Active toutes les cellules de la diagonale montante
+     * (change leur état)
+     */
     public void activerDiagonaleMontante(){
         for (int i=0;i<nbLignes;i++){
             matriceCellules[i][nbLignes-1-i].activerCellule();
         }
     }
+    
+    /**
+     * Active aléatoirement toutes les cellules d'une ligne, d'une colonne
+     * ou d'une diagonale
+     */
     public void activerLigneColonneOuDiagonaleAleatoire(){
         Random alea = new Random();
         int unnombreligne=alea.nextInt(nbLignes)+1;
@@ -91,6 +124,13 @@ public class GrilleDeCellules {
             activerDiagonaleMontante();
         }
     }
+    
+    /**
+     * Utilise la méthode pour activer aléatoirement une ligne, une colonne
+     * ou une diagonale pour mélanger la grlle de jeu, elle utilise cette 
+     * méthode le nombre de fois entré en paramètre 
+     * @param nbTours
+     */
     public void melangerMatriceAleatoirement(int nbTours){
         eteindreToutesLesCellules();
         for (int i=0;i<nbTours;i++){

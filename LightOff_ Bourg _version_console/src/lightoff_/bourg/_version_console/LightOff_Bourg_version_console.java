@@ -1,8 +1,8 @@
 /*
  * Emilie Bourg
- * 25/10/2023
+ * 27/10/2023
  * TDC
- * 
+ * Lance la partie à l'aide des différentes class
  */
 package lightoff_.bourg._version_console;
 
@@ -16,14 +16,7 @@ public class LightOff_Bourg_version_console {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        GrilleDeCellules grille1 = new GrilleDeCellules (10, 10);
-        /*grille1.activerLigneDeCellules(5);
-        grille1.activerColonneDeCellules(6);
-        grille1.activerDiagonaleDescendante();
-        grille1.activerDiagonaleMontante();*/
-        System.out.println(grille1.cellulesToutesEteintes());
-        grille1.melangerMatriceAleatoirement(2);
-        System.out.println(grille1);
-        System.out.println(grille1.cellulesToutesEteintes());
+        Partie jeu = new Partie(10,10);
+        jeu.lancerPartie();
     }
 }
