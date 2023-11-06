@@ -16,6 +16,7 @@ import javax.swing.JButton;
 public class FenetrePrincipale extends javax.swing.JFrame {
     GrilleDeCellules grille;
     int nbcoups;
+   
 
     /**
      * Creates new form FenetrePrincipale
@@ -37,10 +38,12 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     }
     
     public void initialiserPartie(){
-       grille.melangerMatriceAleatoirement(5);
+       grille.melangerMatriceAleatoirement(10);
        while(grille.cellulesToutesEteintes()==true){
            grille.melangerMatriceAleatoirement(5);
        }
+       victoire.setVisible(false);
+       nombrecoups.setText("Nombre de coups: "+nbcoups);
     } 
         
 
@@ -54,7 +57,30 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     private void initComponents() {
 
         PanneauGrille = new javax.swing.JPanel();
+        btnLigne1 = new javax.swing.JButton();
+        btnLigne2 = new javax.swing.JButton();
+        btnLigne3 = new javax.swing.JButton();
+        btnLigne4 = new javax.swing.JButton();
+        btnLigne5 = new javax.swing.JButton();
+        btnLigne6 = new javax.swing.JButton();
+        btnLigne7 = new javax.swing.JButton();
+        btnLigne8 = new javax.swing.JButton();
+        btnLigne9 = new javax.swing.JButton();
+        btnLigne10 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        btndiagdesc = new javax.swing.JButton();
+        btndiagmont = new javax.swing.JButton();
+        victoire = new javax.swing.JLabel();
+        nombrecoups = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(600, 400));
@@ -67,30 +93,407 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         PanneauGrille.setLayout(PanneauGrilleLayout);
         PanneauGrilleLayout.setHorizontalGroup(
             PanneauGrilleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 390, Short.MAX_VALUE)
+            .addGap(0, 510, Short.MAX_VALUE)
         );
         PanneauGrilleLayout.setVerticalGroup(
             PanneauGrilleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 450, Short.MAX_VALUE)
         );
 
-        getContentPane().add(PanneauGrille, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 390, 450));
+        getContentPane().add(PanneauGrille, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 510, 450));
 
-        jButton1.setText("jButton1");
+        btnLigne1.setForeground(new java.awt.Color(255, 0, 51));
+        btnLigne1.setText("Ligne 1");
+        btnLigne1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLigne1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnLigne1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+
+        btnLigne2.setForeground(new java.awt.Color(255, 0, 51));
+        btnLigne2.setText("Ligne 2");
+        btnLigne2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLigne2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnLigne2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
+
+        btnLigne3.setForeground(new java.awt.Color(255, 0, 51));
+        btnLigne3.setText("Ligne 3");
+        btnLigne3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLigne3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnLigne3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+
+        btnLigne4.setForeground(new java.awt.Color(255, 0, 51));
+        btnLigne4.setText("Ligne 4");
+        btnLigne4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLigne4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnLigne4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
+
+        btnLigne5.setForeground(new java.awt.Color(255, 0, 51));
+        btnLigne5.setText("Ligne 5");
+        btnLigne5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLigne5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnLigne5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
+
+        btnLigne6.setForeground(new java.awt.Color(255, 0, 51));
+        btnLigne6.setText("Ligne 6");
+        btnLigne6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLigne6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnLigne6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
+
+        btnLigne7.setForeground(new java.awt.Color(255, 0, 51));
+        btnLigne7.setText("Ligne 7");
+        btnLigne7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLigne7ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnLigne7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, -1, -1));
+
+        btnLigne8.setForeground(new java.awt.Color(255, 0, 51));
+        btnLigne8.setText("Ligne 8");
+        btnLigne8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLigne8ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnLigne8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, -1, -1));
+
+        btnLigne9.setForeground(new java.awt.Color(255, 0, 51));
+        btnLigne9.setText("Ligne 9");
+        btnLigne9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLigne9ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnLigne9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, -1, -1));
+
+        btnLigne10.setForeground(new java.awt.Color(255, 0, 51));
+        btnLigne10.setText("Ligne 10");
+        btnLigne10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLigne10ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnLigne10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, -1, -1));
+
+        jButton1.setForeground(new java.awt.Color(255, 0, 51));
+        jButton1.setText("C1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 50, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 50, 30));
+
+        jButton2.setForeground(new java.awt.Color(255, 0, 51));
+        jButton2.setText("C2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 50, 30));
+
+        jButton3.setForeground(new java.awt.Color(255, 0, 51));
+        jButton3.setText("C3");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 50, 30));
+
+        jButton4.setForeground(new java.awt.Color(255, 0, 51));
+        jButton4.setText("C4");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 50, 30));
+
+        jButton5.setForeground(new java.awt.Color(255, 0, 51));
+        jButton5.setText("C5");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 50, 30));
+
+        jButton6.setForeground(new java.awt.Color(255, 0, 51));
+        jButton6.setText("C6");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 40, 50, 30));
+
+        jButton7.setForeground(new java.awt.Color(255, 0, 51));
+        jButton7.setText("C7");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 50, 30));
+
+        jButton8.setForeground(new java.awt.Color(255, 0, 51));
+        jButton8.setText("C8");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 40, 50, 30));
+
+        jButton9.setForeground(new java.awt.Color(255, 0, 51));
+        jButton9.setText("C9");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 40, 50, 30));
+
+        jButton10.setForeground(new java.awt.Color(255, 0, 51));
+        jButton10.setText("C10");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 40, 60, 30));
+
+        btndiagdesc.setBackground(new java.awt.Color(0, 0, 0));
+        btndiagdesc.setForeground(new java.awt.Color(255, 0, 0));
+        btndiagdesc.setText("diagonale");
+        btndiagdesc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btndiagdescActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btndiagdesc, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+
+        btndiagmont.setBackground(new java.awt.Color(0, 0, 0));
+        btndiagmont.setForeground(new java.awt.Color(255, 0, 0));
+        btndiagmont.setText("diagonale ");
+        btndiagmont.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btndiagmontActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btndiagmont, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
+
+        victoire.setText("Bravo! Vous avez gagné");
+        getContentPane().add(victoire, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 540, 130, 30));
+
+        nombrecoups.setText("Nombre de coups :");
+        getContentPane().add(nombrecoups, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 540, -1, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void finjeu(){
+        nombrecoups.setText("Nombre de coups: "+nbcoups);
+        if (grille.cellulesToutesEteintes()==true){
+            victoire.setVisible(true);
+            jButton1.setEnabled(false);
+            jButton2.setEnabled(false);
+            jButton3.setEnabled(false);
+            jButton4.setEnabled(false);
+            jButton5.setEnabled(false);
+            jButton6.setEnabled(false);
+            jButton7.setEnabled(false);
+            jButton8.setEnabled(false);
+            jButton9.setEnabled(false);
+            jButton10.setEnabled(false);
+            btndiagdesc.setEnabled(false);
+            btndiagmont.setEnabled(false);
+            btnLigne1.setEnabled(false);
+            btnLigne2.setEnabled(false);
+            btnLigne3.setEnabled(false);
+            btnLigne4.setEnabled(false);
+            btnLigne5.setEnabled(false);
+            btnLigne6.setEnabled(false);
+            btnLigne7.setEnabled(false);
+            btnLigne8.setEnabled(false);
+            btnLigne9.setEnabled(false);
+            btnLigne10.setEnabled(false);
+        }
+    }
+    
+    private void btnLigne1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLigne1ActionPerformed
         grille.activerLigneDeCellules(1);
-                repaint();        // TODO add your handling code here:
+        repaint();  
+        nbcoups+=1;
+        finjeu();
+        
+    }//GEN-LAST:event_btnLigne1ActionPerformed
+
+    private void btnLigne2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLigne2ActionPerformed
+        grille.activerLigneDeCellules(2);
+        repaint();
+        nbcoups+=1;
+        finjeu();
+    }//GEN-LAST:event_btnLigne2ActionPerformed
+
+    private void btnLigne3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLigne3ActionPerformed
+        grille.activerLigneDeCellules(3);
+        repaint();
+        nbcoups+=1;
+        finjeu();
+    }//GEN-LAST:event_btnLigne3ActionPerformed
+
+    private void btnLigne4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLigne4ActionPerformed
+        grille.activerLigneDeCellules(4);
+        repaint();
+        nbcoups+=1;
+        finjeu();
+    }//GEN-LAST:event_btnLigne4ActionPerformed
+
+    private void btnLigne5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLigne5ActionPerformed
+        grille.activerLigneDeCellules(5);
+        repaint();
+        nbcoups+=1;
+        finjeu();
+    }//GEN-LAST:event_btnLigne5ActionPerformed
+
+    private void btnLigne6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLigne6ActionPerformed
+        grille.activerLigneDeCellules(6);
+        repaint();
+        nbcoups+=1;
+        finjeu();
+    }//GEN-LAST:event_btnLigne6ActionPerformed
+
+    private void btnLigne7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLigne7ActionPerformed
+        grille.activerLigneDeCellules(7);
+        repaint();
+        nbcoups+=1;
+        finjeu();
+    }//GEN-LAST:event_btnLigne7ActionPerformed
+
+    private void btnLigne8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLigne8ActionPerformed
+        grille.activerLigneDeCellules(8);
+        repaint();
+        nbcoups+=1;
+        finjeu();
+    }//GEN-LAST:event_btnLigne8ActionPerformed
+
+    private void btnLigne9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLigne9ActionPerformed
+        grille.activerLigneDeCellules(9);
+        repaint();
+        nbcoups+=1;
+        finjeu();
+    }//GEN-LAST:event_btnLigne9ActionPerformed
+
+    private void btnLigne10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLigne10ActionPerformed
+        grille.activerLigneDeCellules(10);
+        repaint();
+        nbcoups+=1;
+        finjeu();
+    }//GEN-LAST:event_btnLigne10ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        grille.activerColonneDeCellules(2);
+        repaint();
+        nbcoups+=1;
+        finjeu();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        grille.activerColonneDeCellules(1);
+        repaint();
+        nbcoups+=1;
+        finjeu();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        grille.activerColonneDeCellules(3);
+        repaint();
+        nbcoups+=1;
+        finjeu();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        grille.activerColonneDeCellules(4);
+        repaint();
+        nbcoups+=1;
+        finjeu();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        grille.activerColonneDeCellules(5);
+        repaint();
+        nbcoups+=1;
+        finjeu();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        grille.activerColonneDeCellules(6);
+        repaint();
+        nbcoups+=1;
+        finjeu();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        grille.activerColonneDeCellules(7);
+        repaint();
+        nbcoups+=1;
+        finjeu();
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        grille.activerColonneDeCellules(8);
+        repaint();
+        nbcoups+=1;
+        finjeu();
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        grille.activerColonneDeCellules(9);
+        repaint();
+        nbcoups+=1;
+        finjeu();
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        grille.activerColonneDeCellules(10);
+        repaint();
+        nbcoups+=1;
+        finjeu();
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void btndiagdescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndiagdescActionPerformed
+        grille.activerDiagonaleDescendante();
+        repaint();
+        nbcoups+=1;
+        finjeu();
+    }//GEN-LAST:event_btndiagdescActionPerformed
+
+    private void btndiagmontActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndiagmontActionPerformed
+        grille.activerDiagonaleMontante();
+        repaint();
+        nbcoups+=1;
+        finjeu();
+    }//GEN-LAST:event_btndiagmontActionPerformed
 
     /**
      * @param args the command line arguments
@@ -129,6 +532,29 @@ public class FenetrePrincipale extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanneauGrille;
+    private javax.swing.JButton btnLigne1;
+    private javax.swing.JButton btnLigne10;
+    private javax.swing.JButton btnLigne2;
+    private javax.swing.JButton btnLigne3;
+    private javax.swing.JButton btnLigne4;
+    private javax.swing.JButton btnLigne5;
+    private javax.swing.JButton btnLigne6;
+    private javax.swing.JButton btnLigne7;
+    private javax.swing.JButton btnLigne8;
+    private javax.swing.JButton btnLigne9;
+    private javax.swing.JButton btndiagdesc;
+    private javax.swing.JButton btndiagmont;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
+    private javax.swing.JLabel nombrecoups;
+    private javax.swing.JLabel victoire;
     // End of variables declaration//GEN-END:variables
 }
