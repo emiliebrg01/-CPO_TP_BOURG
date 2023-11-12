@@ -1,11 +1,14 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Emilie Bourg
+ * 12/11/2023
+ * TDC
+ * Affiche la fenetre de victoire
  */
 package FenetreVictoire;
 
+
 /**
- *
+ * Pour afficher la fenetre de victoire
  * @author Emilie
  */
 public class FenetreVictoire extends javax.swing.JFrame {
@@ -14,7 +17,7 @@ public class FenetreVictoire extends javax.swing.JFrame {
      * Creates new form FenetreVictoire
      */
     public FenetreVictoire() {
-        initComponents();
+        initComponents(); 
     }
 
     /**
@@ -26,17 +29,32 @@ public class FenetreVictoire extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Victoire = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(2000, 1000));
+
+        Victoire.setBackground(new java.awt.Color(0, 0, 0));
+        Victoire.setForeground(new java.awt.Color(204, 153, 0));
+        Victoire.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Victoire.setText("BRAVO!!! Vous avez gagné");
+        Victoire.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(204, 153, 0)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(Victoire, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(54, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(81, 81, 81)
+                .addComponent(Victoire, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(99, Short.MAX_VALUE))
         );
 
         pack();
@@ -78,5 +96,6 @@ public class FenetreVictoire extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Victoire;
     // End of variables declaration//GEN-END:variables
 }

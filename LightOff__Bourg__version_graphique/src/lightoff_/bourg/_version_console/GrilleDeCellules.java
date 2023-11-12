@@ -126,13 +126,27 @@ public class GrilleDeCellules {
     }
     
     /**
-     * Utilise la méthode pour activer aléatoirement une ligne, une colonne
-     * ou une diagonale pour mélanger la grlle de jeu, elle utilise cette 
+     * Eteint toutes les cellules puis,
+     * utilise la méthode pour activer aléatoirement une ligne, une colonne
+     * ou une diagonale pour mélanger la grille de jeu, elle utilise cette 
      * méthode le nombre de fois entré en paramètre 
      * @param nbTours
      */
     public void melangerMatriceAleatoirement(int nbTours){
         eteindreToutesLesCellules();
+        for (int i=0;i<nbTours;i++){
+            activerLigneColonneOuDiagonaleAleatoire();
+            
+        }
+    }
+    
+    /**
+     * Utilise la méthode pour activer aléatoirement une ligne, une colonne
+     * ou une diagonale pour mélanger la grille de jeu, elle utilise cette 
+     * méthode le nombre de fois entré en paramètre 
+     * @param nbTours
+     */
+    public void melangeMatrice(int nbTours){
         for (int i=0;i<nbTours;i++){
             activerLigneColonneOuDiagonaleAleatoire();
             
