@@ -302,7 +302,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         case_moy.setText("15 lignes/ 15 colonnes");
         getContentPane().add(case_moy, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 230, -1, -1));
 
-        diff_plus.setText("+ Changement toutes les 5 sec");
+        diff_plus.setText("+ Changement toutes les 10 sec");
         getContentPane().add(diff_plus, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 310, -1, -1));
 
         pack();
