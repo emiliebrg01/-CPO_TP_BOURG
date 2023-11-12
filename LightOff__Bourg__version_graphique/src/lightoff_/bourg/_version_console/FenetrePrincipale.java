@@ -1,11 +1,12 @@
 /*
  * Emilie Bourg
- * 06/11/2023
+ * 12/11/2023
  * TDC
  * Fenetre principale, permer d'afficher une fenetre contenant la grille de jeu
  */
 package lightoff_.bourg._version_console;
 
+import FenetreVictoire.FenetreVictoire;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -13,7 +14,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 /**
- *
+ * Argument de la grille et création de celle-ci
  * @author Emilie
  */
 public class FenetrePrincipale extends javax.swing.JFrame {
@@ -50,7 +51,9 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         this.revalidate();
         
         diagonalemontante.setLayout(new GridLayout(1,1));
-        getContentPane().add(diagonalemontante, new org.netbeans.lib.awtextra.AbsoluteConstraints(nbColonnes+20, 20, 1 * 40, 1 * 40));
+        int position;
+        position = nbColonnes*50;
+        getContentPane().add(diagonalemontante, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, position, 1 * 40, 1 * 40));
         this.pack();
         this.revalidate();
         
@@ -71,7 +74,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         // création du panneau de boutons horizontaux (pour les colonnes)
         for ( i = 0; i < nbLignes; i++) { 
             JButton bouton_colonne = new JButton();
-            ActionListener ecouteurClick = new ActionListener() { 
+            ActionListener ecouteClick = new ActionListener() { 
                     final int j = i;
                     @Override 
                     public void actionPerformed(ActionEvent e) { 
@@ -79,12 +82,12 @@ public class FenetrePrincipale extends javax.swing.JFrame {
                         repaint(); 
                         finjeu();
                     } }; 
-            bouton_colonne.addActionListener(ecouteurClick); 
+            bouton_colonne.addActionListener(ecouteClick); 
             PanneauBoutonsHorizontaux.add(bouton_colonne);
         }
         // création du bouton de la diagonale descendante
         JButton bouton_diagdesc = new JButton();
-        ActionListener ecouteurClick = new ActionListener() { 
+        ActionListener clique_bout = new ActionListener() { 
                     final int j = i;
                     @Override 
                     public void actionPerformed(ActionEvent e) { 
@@ -92,13 +95,23 @@ public class FenetrePrincipale extends javax.swing.JFrame {
                         repaint(); 
                         finjeu();
                     } }; 
-            bouton_diagdesc.addActionListener(ecouteurClick); 
+            bouton_diagdesc.addActionListener(clique_bout); 
             diagonaledescendante.add(bouton_diagdesc);
             
         // création du bouton de la diagonale montante
         JButton bouton_diagmont = new JButton();
+        ActionListener clique = new ActionListener() { 
+            final int j = i;
+            @Override 
+            public void actionPerformed(ActionEvent e) { 
+                grille.activerDiagonaleMontante();
+                repaint(); 
+                finjeu();
+                } }; 
+        bouton_diagmont.addActionListener(clique); 
+        diagonalemontante.add(bouton_diagmont);    
         
-        
+        // Crée la grille à partir des cellules graphiques
         for (int i=0; i < nbLignes; i++) { 
             for (int j=0; j < nbColonnes; j++ ) {
                 CelluleGraphique bouton_cellule = new CelluleGraphique(36, 36, grille.matriceCellules[i][j]);
@@ -110,13 +123,16 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         initialiserPartie();
     }
     
+    /**
+     * Initialise une partie de jeu, mélange la grille et affiche le 
+     * nombre de coups joués
+     */
     public void initialiserPartie(){
-       grille.melangerMatriceAleatoirement(10);
-       while(grille.cellulesToutesEteintes()==true){
-           grille.melangerMatriceAleatoirement(5);
-       }
-       victoire.setVisible(false);
-       nombrecoups.setText("Nombre de coups: "+nbcoups);
+        grille.melangerMatriceAleatoirement(10);
+        while(grille.cellulesToutesEteintes()==true){
+            grille.melangerMatriceAleatoirement(5);
+        }
+        nombrecoups.setText("Nombre de coups: "+nbcoups);
     } 
         
 
@@ -130,11 +146,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     private void initComponents() {
 
         PanneauGrille = new javax.swing.JPanel();
-        victoire = new javax.swing.JLabel();
         nombrecoups = new javax.swing.JLabel();
-        But = new javax.swing.JLabel();
-        eteinte = new javax.swing.JLabel();
-        allumée = new javax.swing.JLabel();
         PanneauBoutonsVerticaux = new javax.swing.JPanel();
         PanneauBoutonsHorizontaux = new javax.swing.JPanel();
         diagonaledescendante = new javax.swing.JPanel();
@@ -160,20 +172,8 @@ public class FenetrePrincipale extends javax.swing.JFrame {
 
         getContentPane().add(PanneauGrille, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 510, 450));
 
-        victoire.setText("Bravo! Vous avez gagné");
-        getContentPane().add(victoire, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 540, 130, 30));
-
         nombrecoups.setText("Nombre de coups :");
         getContentPane().add(nombrecoups, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 540, -1, 30));
-
-        But.setText("But : allumer toutes les cases");
-        getContentPane().add(But, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 130, -1, -1));
-
-        eteinte.setText("Eteinte : X");
-        getContentPane().add(eteinte, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 150, -1, 20));
-
-        allumée.setText("Allumée : O");
-        getContentPane().add(allumée, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 170, -1, 20));
 
         javax.swing.GroupLayout PanneauBoutonsVerticauxLayout = new javax.swing.GroupLayout(PanneauBoutonsVerticaux);
         PanneauBoutonsVerticaux.setLayout(PanneauBoutonsVerticauxLayout);
@@ -232,12 +232,10 @@ public class FenetrePrincipale extends javax.swing.JFrame {
 
     private void finjeu(){
         nbcoups+=1;
-        But.setVisible(false);
-        allumée.setVisible(false);
-        eteinte.setVisible(false);
         nombrecoups.setText("Nombre de coups: "+nbcoups);
         if (grille.cellulesToutesEteintes()==true){
-            victoire.setVisible(true);  
+            FenetreVictoire f = new FenetreVictoire();
+            f.setVisible(true);
         }
     }
     
@@ -277,15 +275,11 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel But;
     private javax.swing.JPanel PanneauBoutonsHorizontaux;
     private javax.swing.JPanel PanneauBoutonsVerticaux;
     private javax.swing.JPanel PanneauGrille;
-    private javax.swing.JLabel allumée;
     private javax.swing.JPanel diagonaledescendante;
     private javax.swing.JPanel diagonalemontante;
-    private javax.swing.JLabel eteinte;
     private javax.swing.JLabel nombrecoups;
-    private javax.swing.JLabel victoire;
     // End of variables declaration//GEN-END:variables
 }
